@@ -199,7 +199,7 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render('campground/error.ejs', { err });
 })
 
-const port = process.end.PORT || 3000;
+const port = process.env.PORT || 3000;
 // Listening to a port
 app.listen(port, (req, res) => {
     console.log(`LISTENING TO PORT ${port}!!`);
