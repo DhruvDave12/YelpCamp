@@ -199,9 +199,10 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render('campground/error.ejs', { err });
 })
 
+const port = process.end.PORT || 3000;
 // Listening to a port
-app.listen(3000, (req, res) => {
-    console.log("LISTENING TO PORT 3000!!");
+app.listen(port, (req, res) => {
+    console.log(`LISTENING TO PORT ${port}!!`);
 })
 // To get specific errors for specific fields we can use the JOI tool
 // In JOI tool i can create a schema.
