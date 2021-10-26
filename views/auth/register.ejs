@@ -1,0 +1,40 @@
+<% layout('./layout/boilerplate') %> 
+
+
+
+<div class="card offset-md-3 offset-xl-5" style="width: 18rem;">
+    <img src="https://images.unsplash.com/photo-1594495894542-a46cc73e081a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNhbXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        class="card-img-top" alt="">
+    <div class="card-body">
+        <h5 class="card-title">Register</h5>
+        <form action="/register" method = "POST" class="validated-form" novalidate>
+            <div class="mb-3">
+                <label for="username" class = "form-label">Username</label>
+                <input type="text" class = "form-control" id = "username" name = "username" required autofocus>
+                <div class="valid-feedback">
+                    Perfect!
+                </div>
+            </div>
+        
+            <div class="mb-3">
+                <label for="email" class = "form-label">Email</label>
+                <input type="email" class = "form-control" id = "email" name = "email" required>
+                <div class="valid-feedback">
+                    Perfect!
+                </div>
+            </div>
+        
+            <div class="mb-3">
+                <label for="password" class = "form-label">Password</label>
+                <input type="password" class = "form-control" id = "password" name = "password" required>
+                <div class="valid-feedback">
+                    Perfect!
+                </div>
+            </div>
+            <div class="d-grid gap-*">
+            <button class="btn btn-success">Register</button>
+
+            </div>
+        </form>
+    </div>
+</div>

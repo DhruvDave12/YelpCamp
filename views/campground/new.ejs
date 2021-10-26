@@ -1,0 +1,74 @@
+<!-- THROUGH EJS MATE WE DID THIS WE USED A LAYOUT FUNCTION AND PASSED A BOILERPLATE.EJS FILE IN LAYOUT FOLDER. -->
+<% layout('./layout/boilerplate.ejs') %>
+
+    <div class="row">
+        <h1 class="text-center mt-3">New Campground</h1>
+        <div class="col-md-6 offset-md-3">
+<!-- add this enctype so that we can get image from input file -->
+            <form action="/campgrounds" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input class="form-control" type="text" placeholder="Title" id="title" name="title" required>
+                    <div class = "valid-feedback">
+                        Perfect!
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input class="form-control" type="text" placeholder="Location" id="location" name="location"
+                        required>
+                        <div class = "valid-feedback">
+                            Perfect!
+                        </div>
+                </div>
+
+                <!-- <div class="mb-3">
+                    
+                    <input type="file" name="image" id="" multiple>
+                    <!-- <label for="image" class="form-label">Image URL</label>
+                    <input class="form-control" type="text" placeholder="Image URL" id="location" name="image" required>
+                    <div class = "valid-feedback">
+                        Perfect!
+                    </div> -->
+                <!-- </div> -->
+              
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" type="text" placeholder="Description" id="location"
+                        name="description" required></textarea>
+                        <div class = "valid-feedback">
+                            Perfect!
+                        </div>    
+                </div>
+
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id = "price-label">$</span>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="price"
+                            placeholder="0.00" id="price">
+                    </div>
+                    <div class = "valid-feedback">
+                        Perfect!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Add Images</label>
+                    <input class="form-control" type="file" id="formFile" name = "image" multiple>
+                </div>
+
+                <div class="mb-3">
+                    <button class="btn btn-success">ADD CAMPGROUND</button>
+                </div>
+            </form>
+
+            <a href="/campgrounds">ALL CAMPGROUNDS</a>
+        </div>
+    </div>
+
+    <!-- We have added bootstrap validation class in here. -->
+

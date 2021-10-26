@@ -1,0 +1,70 @@
+<!-- THROUGH EJS MATE WE DID THIS WE USED A LAYOUT FUNCTION AND PASSED A BOILERPLATE.EJS FILE IN LAYOUT FOLDER. -->
+<% layout('./layout/boilerplate.ejs') %> 
+    <div class="row">
+        <h1 class="text-center mt-3">Edit Campground</h1>
+        <div class="col-md-6 offset-md-3">
+
+            <form action="/campgrounds/<%= newCampground._id %>?_method=PUT" method="POST" novalidate class = "validated-form" enctype="multipart/form-data">
+
+                <div class = "mb-3">
+                    <label for="newTitle" class = "form-label">Title</label>
+                    <input class = "form-control" type="text" placeholder="Title" id="newTitle" name="title" value = "<%= newCampground.title %>" required>
+                    <div class = "valid-feedback">
+                        Perfect!
+                    </div>
+                </div>
+
+
+                <div class = "mb-3">
+                    <label for="newLocation" class = "form-label">Location</label>
+                    <input class = "form-control" type="text" placeholder="Location" id="newLocation" name="location" value = "<%= newCampground.location %>" required>
+                    <div class = "valid-feedback">
+                        Perfect!
+                    </div>
+                </div>
+                
+              
+
+                <div class = "mb-3">
+                    <label for="description" class = "form-label">Description</label>
+                    <textarea class = "form-control" type="text" placeholder="Description" id="location" name="description" required><%= newCampground.description %></textarea>
+                    <div class = "valid-feedback">
+                        Perfect!
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="price" class = "form-label">Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name = "price" placeholder="0.00" id = "price" value = "<%= newCampground.price %>" required>
+                        <span class="input-group-text">.00</span>
+                    </div>
+                    <div class = "valid-feedback">
+                        Perfect!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Add Images</label>
+                    <input class="form-control" type="file" id="formFile" name = "image" multiple>
+                </div>
+                
+                <div class="mb-3">
+                    <% newCampground.images.forEach(function(img,i){ %>
+                        <img src="<%= img.thumbnail %>" class="img-thumbnail" alt="">
+                        <div class="form-check-inline">
+                            <!-- deleteImages[] is an array in name and now when i click the checkbox we can add the location of value in name (deleteImages[]) -->
+                            <input type="checkbox" id = "image-<%= i%>" name="deleteImages[]" value="<%= img.fileName %>">
+                        </div>
+                        <label for="image-<%= i%>">Delete Image</label>
+                    <% }) %> 
+                </div>
+                
+                <div class="mb-3">
+                    <button class = "btn btn-info">SAVE CHANGES</button>
+                </div>
+            </form>
+
+            <a href="/campgrounds">ALL CAMPGROUNDS</a>
+        </div>
+    </div>
